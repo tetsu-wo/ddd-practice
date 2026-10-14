@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="販売期間（validateSalesPeriod）の境界値テスト" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-14T01:09:56.400Z" hostname="MOUSE" time="0.007">
+  <properties/>
+  <testcase name="【異常系】販売終了日時より後の注文は、IllegalStateExceptionが発生すること" classname="domain.products_inventory.ProductTest$SalesPeriodValidation" time="0.001"/>
+  <testcase name="【正常系】販売期間内の注文であれば、例外が発生しないこと" classname="domain.products_inventory.ProductTest$SalesPeriodValidation" time="0.003"/>
+  <testcase name="【異常系】販売開始日時より前の注文は、IllegalStateExceptionが発生すること" classname="domain.products_inventory.ProductTest$SalesPeriodValidation" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,44 @@
+// ddd-practice/ec-logic/build.gradle
+
+// このモジュールはJavaのプロジェクトであることを宣言します
+plugins {
+    id 'java'
+}
+
+// ★追加：ライブラリをダウンロードしてくる倉庫（リポジトリ）を指定します
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 将来的にSpring BootやJPAを使う場合は、ここにライブラリを追記します
+    // 現時点では、標準的なJavaの機能のみでビルドするため空で大丈夫です
+    // JUnit5（テスト用ライブラリ）の依存関係を追加
+
+    // 👈 多くの環境で一番安定して動く 5.10.2 にバージョンを少し下げます
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testImplementation 'org.assertj:assertj-core:3.26.3'
+
+    // 2. ★超重要：今回のエラー（Failed to load JUnit Platform）を解決するためのランチャー
+    // これを明示的に追加することで、Gradle Test Executorが正常に起動できるようになります！
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+//    // これ1本で API、Params、Engine（Platform）がすべて揃います
+//    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.0'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.11.0' // バージョンは環境に合わせて調整してください
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+
+}
+
+//test {
+//    useJUnitPlatform() // テスト実行時にJUnitを使用する規約
+//}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+
+// IntelliJのKotlin同期プラグインのエラーを強制的に回避する設定
+tasks.register("prepareKotlinBuildScriptModel") {}
+

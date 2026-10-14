@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="異常系のテスト" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-14T01:09:56.452Z" hostname="MOUSE" time="0.012">
+  <properties/>
+  <testcase name="[1] XL" classname="domain.products_inventory.SizeTest$InvalidCases" time="0.002"/>
+  <testcase name="[2] s" classname="domain.products_inventory.SizeTest$InvalidCases" time="0.001"/>
+  <testcase name="[3] " classname="domain.products_inventory.SizeTest$InvalidCases" time="0.001"/>
+  <testcase name="[4]  " classname="domain.products_inventory.SizeTest$InvalidCases" time="0.001"/>
+  <testcase name="nullが渡された場合にNullPointerExceptionが発生すること" classname="domain.products_inventory.SizeTest$InvalidCases" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

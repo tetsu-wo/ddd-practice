@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="在庫返却（releaseStock）のテスト" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-14T01:09:56.422Z" hostname="MOUSE" time="0.001">
+  <properties/>
+  <testcase name="【正常系】在庫を返却した場合、在庫数が正しく加算されること" classname="domain.products_inventory.SKUTest$ReleaseStock" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

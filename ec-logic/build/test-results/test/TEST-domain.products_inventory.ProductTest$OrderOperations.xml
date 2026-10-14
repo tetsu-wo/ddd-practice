@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="注文処理（order）とキャンセル（cancelOrder）のテスト" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-14T01:09:56.332Z" hostname="MOUSE" time="0.065">
+  <properties/>
+  <testcase name="【正常系】正しい条件で注文すると、対象SKUの在庫が減算されること" classname="domain.products_inventory.ProductTest$OrderOperations" time="0.058"/>
+  <testcase name="【異常系】存在しないバリエーションを指定した場合、IllegalArgumentExceptionが発生すること" classname="domain.products_inventory.ProductTest$OrderOperations" time="0.005"/>
+  <testcase name="【正常系】注文をキャンセルすると、対象SKUの在庫が加算（復元）されること" classname="domain.products_inventory.ProductTest$OrderOperations" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
