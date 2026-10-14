@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="正常系のテスト" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-14T01:09:56.470Z" hostname="MOUSE" time="0.007">
-  <properties/>
-  <testcase name="[1] S" classname="domain.products_inventory.SizeTest$ValidCases" time="0.001"/>
-  <testcase name="[2] M" classname="domain.products_inventory.SizeTest$ValidCases" time="0.001"/>
-  <testcase name="[3] L" classname="domain.products_inventory.SizeTest$ValidCases" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

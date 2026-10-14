@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="動的ステータス（getStatus）の判定テスト" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-14T01:09:56.410Z" hostname="MOUSE" time="0.006">
-  <properties/>
-  <testcase name="【正常系】ステータスが公開であっても、全SKUの合計在庫が0なら「売り切れ」を返すこと" classname="domain.products_inventory.ProductTest$StatusResolution" time="0.004"/>
-  <testcase name="【正常系】1つでも在庫があるSKUが存在すれば、元のステータス「公開」を返すこと" classname="domain.products_inventory.ProductTest$StatusResolution" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

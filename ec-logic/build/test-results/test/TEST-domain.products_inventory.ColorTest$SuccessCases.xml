@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="正常系: 有効なカラーの生成" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-14T01:09:56.316Z" hostname="MOUSE" time="0.005">
-  <properties/>
-  <testcase name="[1] 赤" classname="domain.products_inventory.ColorTest$SuccessCases" time="0.002"/>
-  <testcase name="[2] 青" classname="domain.products_inventory.ColorTest$SuccessCases" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

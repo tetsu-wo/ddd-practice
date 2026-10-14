@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="在庫引き当て（allocateStock）のテスト" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-14T01:09:56.427Z" hostname="MOUSE" time="0.007">
-  <properties/>
-  <testcase name="【異常系】在庫数を超える数量を引き当てた場合、IllegalStateExceptionが発生し、在庫数が変更されないこと" classname="domain.products_inventory.SKUTest$AllocateStock" time="0.005"/>
-  <testcase name="【正常系】在庫数以下の数量を引き当てた場合、在庫数が正しく減算されること" classname="domain.products_inventory.SKUTest$AllocateStock" time="0.0"/>
-  <testcase name="【境界値】在庫数ぴったりの数量を引き当てた場合、在庫数が0になること" classname="domain.products_inventory.SKUTest$AllocateStock" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
