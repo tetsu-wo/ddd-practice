@@ -22,7 +22,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     // 1. Jakarta Validation のインターフェース定義
     implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
-
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     // 2. バリデーションを実際に動かすための実装体（必須）
     implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
 

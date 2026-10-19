@@ -35,5 +35,6 @@ public class ProductQueryUseCase {
                 product.toSkuResponses() // SKUは露出せずProduct内でSkuResponseへ型ハメされる
         );
     }
+
 }
 

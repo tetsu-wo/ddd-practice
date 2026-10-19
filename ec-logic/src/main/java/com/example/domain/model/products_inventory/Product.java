@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Product {
     @Getter private final ProductIdentity productIdentity;
-    private final List<SKU> skus;
+    final List<SKU> skus;
     private String status;
 
     public Product(ProductIdentity productIdentity, List<SKU> skus, String status) {
