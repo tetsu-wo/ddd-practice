@@ -1,0 +1,41 @@
+spring:
+  # MySQLへの接続設定
+  datasource:
+    url: jdbc:mysql://localhost:3306/ddd-practice?serverTimezone=Asia/Tokyo
+    username: root
+    password: qwert
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  #     url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+  #     driver-class-name: org.h2.Driver
+  #     username: sa
+  #     password:
+
+  # JPA/Hibernateの設定
+  jpa:
+    hibernate:
+      # 起動時にJavaクラスを元に自動でテーブルを作成・更新する
+      ddl-auto: validate
+    # 実行されたSQLをコンソールに表示する（開発用）
+    show-sql: true
+
+  flyway:
+    enabled: true
+    locations: "classpath:db/migration"
+    baseline-on-migrate: true
+
+  # MyBatis設定: XMLファイルの配置場所を指定 (resources/mapper/ 配下)
+  mybatis:
+    mapper-locations: classpath:mapper/ProductMyBatisMapper.xml
+    # スネークケース(db_column)をキャメルケース(dbColumn)に自動変換する設定
+    configuration:
+      map-underscore-to-camel-case: true
+
+  sql:
+    init:
+      mode: never
+
+  logging:
+    level:
+      org.hibernate.SQL: DEBUG
+      com.example.infrastructure.db.mybatis.mapper: DEBUG

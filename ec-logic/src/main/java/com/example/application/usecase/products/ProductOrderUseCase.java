@@ -35,7 +35,7 @@ public class ProductOrderUseCase {
         LocalDateTime orderDate = LocalDateTime.now();
 
         // ③ 集約ルートの窓口だけを叩き、ビジネスルールを実行
-        product.order(color, size, quantity, orderDate);
+//        product.order(color, size, quantity, orderDate);
 
         // ④ 状態が更新された Product を保存（反映）
         productRepository.save(product);

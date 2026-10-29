@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.infrastructure.db.mybatis.mapper.ProductMyBatisMapper">
+
+    <select id="selectTest" resultType="int">
+        SELECT 1
+    </select>
+
+    <insert id="insertSkuBatch">
+        INSERT INTO skus (id, color, size, stock_quantity)
+        VALUES
+        <foreach collection="skus" item="sku" separator=",">
+            (#{sku.id}, #{sku.color}, #{sku.size}, #{sku.stockQuantity})
+        </foreach>
+    </insert>
+
+    <!-- 1. SKU（子要素）単体のマッピングルール（引数3つ） -->
+    <resultMap id="SkuMap" type="com.example.presentation.dto.ProductDetailResponse$SkuResponse">
+        <constructor>
+            <arg column="color" javaType="String"/>
+            <arg column="size" javaType="String"/>
+            <arg column="stock_quantity" javaType="int"/>
+        </constructor>
+    </resultMap>
+
+    <!-- 2. 商品（親要素）のマッピングルール（引数4つ） -->
+    <resultMap id="ProductDetailMap" type="com.example.presentation.dto.ProductDetailResponse">
+        <constructor>
+            <arg column="product_id" javaType="String"/>
+            <arg column="product_name" javaType="String"/>
+            <arg column="status" javaType="String"/>
+            <!-- ★リスト（skus）は、下の「selectSkuByProductId」という別SQLを呼び出してコンストラクタに渡す -->
+            <arg column="product_id" javaType="List" select="selectSkuByProductId"/>
+        </constructor>
+    </resultMap>
+
+    <!-- 3. メインのSQL：商品の情報を1件だけ取得する -->
+    <select id="findProductDetailById" resultMap="ProductDetailMap">
+        SELECT
+        id     AS product_id,
+        name   AS product_name,
+        status AS status
+        FROM products
+        WHERE id = #{productId}
+    </select>
+
+    <!-- 4. サブのSQL：商品のIDに紐づくSKUの一覧を3カラムで取得する -->
+    <select id="selectSkuByProductId" resultMap="SkuMap">
+        SELECT
+        color,
+        size,
+        stock_quantity
+        FROM skus
+        WHERE product_id = #{product_id}
+    </select>
+
+
+
+</mapper>

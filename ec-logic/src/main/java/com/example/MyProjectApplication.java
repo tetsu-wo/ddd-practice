@@ -1,14 +1,13 @@
 package com.example; // あなたのプロジェクトのパッケージ名に合わせてください
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 
-@SpringBootApplication(exclude = {
-        DataSourceAutoConfiguration.class,
-        HibernateJpaAutoConfiguration.class
-}) // 1. これが「Springの起動スイッチ」の目印です！
+@SpringBootApplication
+@MapperScan("com.example.infrastructure.db.mybatis.mapper") // MyBatisのマッパーをスキャン
 public class MyProjectApplication {
 
     public static void main(String[] args) {

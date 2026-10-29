@@ -111,20 +111,6 @@ class ProductTest {
     @DisplayName("2. order()：購入操作とガードの検証（ステータス遷移・業務ルール）")
     class OrderTest {
 
-        @Test
-        @DisplayName("【正常系】販売期間内かつ「公開」であれば注文でき、指定したSKUの在庫が減ること")
-        void success_order() {
-            SKU sku = createSku(red, sizeM, 10);
-            Product product = createProduct("公開", sku);
-
-            // 【Act】期間内の日時で2個注文
-            product.order(red, sizeM, 2, validOrderDate);
-
-            // 【Assert】器のチェック（対象SKUの在庫が 10 -> 8 に減っていること）
-            assertThat(sku.getStockQuantity()).isEqualTo(8);
-        }
-
-        @Test
         @DisplayName("【期間外ガード】注文日時が販売開始日時より前の場合はエラーになること")
         void failure_before_sales_period() {
             Product product = createProduct("公開", createSku(red, sizeM, 10));

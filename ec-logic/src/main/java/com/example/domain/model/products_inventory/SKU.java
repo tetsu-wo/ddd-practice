@@ -1,11 +1,15 @@
 package com.example.domain.model.products_inventory;
 
 
-class SKU {
+import lombok.Getter;
+
+public class SKU {
+
+    @Getter
     private final SkuIdentity skuidentity;
     private int stockQuantity;
 
-    SKU(SkuIdentity skuidentity, int stockQuantity) {
+    public SKU(SkuIdentity skuidentity, int stockQuantity) {
         if (stockQuantity < 0) throw new IllegalArgumentException("在庫数は0以上である必要があります。");
         this.skuidentity = skuidentity;
         this.stockQuantity = stockQuantity;

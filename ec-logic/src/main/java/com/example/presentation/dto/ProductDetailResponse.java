@@ -1,31 +1,24 @@
 package com.example.presentation.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import java.util.List;
 
 /**
  * 商品詳細レスポンスDTO (画面へ返すJSONの構造)
- * ★Lombokの@Getterや@AllArgsConstructorをフル活用してシンプルに保ちます。
+ * ★Java標準のrecordを使用し、完全なイミュータブル性と安全性を両立します。
  */
-@Getter
-@AllArgsConstructor
-public class ProductDetailResponse {
-
-    private final String productId;
-    private final String productName;
-    private final String status;
-    private final List<SkuResponse> skus;
-
+public record ProductDetailResponse(
+        String productId,
+        String productName,
+        String status,
+        List<SkuResponse> skus
+) {
     /**
      * 画面出力用の、SKUのデータ構造
-     * ★このクラス（型）を、ドメイン層の Product に「これに型ハメしてくれ」と頼みます。
+     * ★ネストされたrecordは自動的に static 扱いになります。
      */
-    @Getter
-    @AllArgsConstructor
-    public static class SkuResponse {
-        private final String color;
-        private final String size;
-        private final int stockQuantity;
-    }
+    public record SkuResponse(
+            String color,
+            String size,
+            Integer stockQuantity
+    ) {}
 }

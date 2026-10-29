@@ -25,9 +25,23 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     // 2. バリデーションを実際に動かすための実装体（必須）
     implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+    // Spring Data JPA (データベース操作の仕組み)
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4'
+
+
+    // MySQL Connector (MySQLに接続するためのドライバー)
+    runtimeOnly 'com.mysql:mysql-connector-j'
 
     // 3. Hibernate Validator が内部で依存する表現言語エンジン（必須）
     implementation 'org.glassfish:jakarta.el:4.0.2'
+    // FlywayのコアライブラリとMySQL用コネクタ
+    implementation 'org.flywaydb:flyway-core'
+    implementation 'org.flywaydb:flyway-mysql'
+
+
+//    runtimeOnly 'com.h2database:h2'
 
     compileOnly 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
@@ -43,6 +57,7 @@ dependencies {
     // 👈 多くの環境で一番安定して動く 5.10.2 にバージョンを少し下げます
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
     testImplementation 'org.assertj:assertj-core:3.27.7'
+    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
 
     // 2. ★超重要：今回のエラー（Failed to load JUnit Platform）を解決するためのランチャー
     // これを明示的に追加することで、Gradle Test Executorが正常に起動できるようになります！
@@ -73,6 +88,10 @@ tasks.named('compileJava') {
     // 🌟 エラーが出ている「他のドメインフォルダ」をコンパイルから完全に無視させる設定
     // ※ "other_domain" の部分を、実際にエラーが起きているフォルダ名に書き換えてください
     exclude '**/domain/promotion/**'
+}
+
+bootRun {
+    standardInput = System.in
 }
 
 

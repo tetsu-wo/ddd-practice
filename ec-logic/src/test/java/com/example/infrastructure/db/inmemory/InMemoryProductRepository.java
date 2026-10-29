@@ -1,13 +1,10 @@
-package com.example.infrastructure;
+package com.example.infrastructure.db.inmemory;
 
 import com.example.domain.model.products_inventory.Product;
 import com.example.domain.model.products_inventory.ProductIdentity;
 import com.example.domain.model.products_inventory.ProductRepository; // ドメイン層のインターフェースをインポート
-import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -17,7 +14,7 @@ import static com.example.domain.model.products_inventory.ProductTestFactory.cre
  * ⭕ 画面連携テスト用のインメモリリポジトリ (フェイク実装クラス)
  * ドメイン層の ProductRepository インターフェースを具現化します。
  */
-@Repository // Spring Bootに「本物の代わりにこれを使って」と登録するアノテーション
+//@Repository // Spring Bootに「本物の代わりにこれを使って」と登録するアノテーション
 public class InMemoryProductRepository implements ProductRepository {
 
     // データベースの代わりに、JavaのMap（メモリ空間）にデータを一時保存します

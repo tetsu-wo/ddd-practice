@@ -1,0 +1,2 @@
+rootProject.name = 'ddd-practice'
+include 'ec-logic'

@@ -1,5 +1,9 @@
 package com.example.domain.model.products_inventory;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
 /**
  * 商品集約のためのリポジトリインターフェース
  * (ドメイン層に配置し、外部の技術からドメインを守る境界線になります)
