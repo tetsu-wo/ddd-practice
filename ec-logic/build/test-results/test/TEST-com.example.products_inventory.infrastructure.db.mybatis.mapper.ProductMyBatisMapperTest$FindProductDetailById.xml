@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="findProductDetailById メソッドのテスト" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-29T22:31:20.515Z" hostname="MOUSE" time="0.022">
+  <properties/>
+  <testcase name="存在する商品IDを指定した場合、該当する商品詳細が取得できること" classname="com.example.products_inventory.infrastructure.db.mybatis.mapper.ProductMyBatisMapperTest$FindProductDetailById" time="0.014"/>
+  <testcase name="存在しない商品IDを指定した場合、nullが返却されること" classname="com.example.products_inventory.infrastructure.db.mybatis.mapper.ProductMyBatisMapperTest$FindProductDetailById" time="0.007"/>
+  <system-out><![CDATA[2026-10-30T07:31:20.508+09:00  INFO 22288 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.products_inventory.infrastructure.db.mybatis.mapper.ProductMyBatisMapperTest$FindProductDetailById]: FindProductDetailById does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30T07:31:20.512+09:00  INFO 22288 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.MyProjectApplication for test class com.example.products_inventory.infrastructure.db.mybatis.mapper.ProductMyBatisMapperTest$FindProductDetailById
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

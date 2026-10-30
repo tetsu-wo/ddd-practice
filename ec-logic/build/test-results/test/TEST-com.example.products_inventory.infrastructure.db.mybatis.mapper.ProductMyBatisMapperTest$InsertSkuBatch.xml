@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="insertSkuBatch メソッドのテスト" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-29T22:31:20.465Z" hostname="MOUSE" time="0.04">
+  <properties/>
+  <testcase name="SKUリストを渡した場合、一括で正常にインサートできること" classname="com.example.products_inventory.infrastructure.db.mybatis.mapper.ProductMyBatisMapperTest$InsertSkuBatch" time="0.04"/>
+  <system-out><![CDATA[2026-10-30T07:31:20.458+09:00  INFO 22288 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.products_inventory.infrastructure.db.mybatis.mapper.ProductMyBatisMapperTest$InsertSkuBatch]: InsertSkuBatch does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30T07:31:20.462+09:00  INFO 22288 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.MyProjectApplication for test class com.example.products_inventory.infrastructure.db.mybatis.mapper.ProductMyBatisMapperTest$InsertSkuBatch
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

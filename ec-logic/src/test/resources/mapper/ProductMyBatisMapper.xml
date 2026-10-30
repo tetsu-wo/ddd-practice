@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.infrastructure.db.mybatis.mapper.ProductMyBatisMapper">
+<mapper namespace="com.example.products_inventory.infrastructure.db.mybatis.mapper.ProductMyBatisMapper">
 
     <select id="selectTest" resultType="int">
         SELECT 1
@@ -16,7 +16,7 @@
     </insert>
 
     <!-- 1. SKU（子要素）単体のマッピングルール（引数3つ） -->
-    <resultMap id="SkuMap" type="com.example.presentation.dto.ProductDetailResponse$SkuResponse">
+    <resultMap id="SkuMap" type="com.example.products_inventory.presentation.dto.ProductDetailResponse$SkuResponse">
         <constructor>
             <arg column="color" javaType="String"/>
             <arg column="size" javaType="String"/>
@@ -25,7 +25,7 @@
     </resultMap>
 
     <!-- 2. 商品（親要素）のマッピングルール（引数4つ） -->
-    <resultMap id="ProductDetailMap" type="com.example.presentation.dto.ProductDetailResponse">
+    <resultMap id="ProductDetailMap" type="com.example.products_inventory.presentation.dto.ProductDetailResponse">
         <constructor>
             <arg column="product_id" javaType="String"/>
             <arg column="product_name" javaType="String"/>

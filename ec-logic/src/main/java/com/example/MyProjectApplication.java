@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 
 @SpringBootApplication
-@MapperScan("com.example.infrastructure.db.mybatis.mapper") // MyBatisのマッパーをスキャン
+@MapperScan("com.example.products_inventory.infrastructure.db.mybatis.mapper") // MyBatisのマッパーをスキャン
 public class MyProjectApplication {
 
     public static void main(String[] args) {
